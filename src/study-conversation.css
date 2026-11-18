@@ -1,0 +1,70 @@
+/* Mantém blocos de código e texto longo dentro da largura da conversa. */
+.conversation .message-body {
+  min-width: 0;
+}
+
+.message-text.reply-markdown {
+  max-width: 75ch;
+  white-space: normal;
+}
+
+.reply-markdown :where(p, ul, ol, blockquote, pre, hr) {
+  margin: 0.75em 0;
+}
+
+.reply-markdown p {
+  white-space: pre-line;
+}
+
+.reply-markdown :where(h1, h2, h3, h4, h5, h6) {
+  margin: 1.25em 0 0.45em;
+  color: #20392b;
+  font-family: Manrope, sans-serif;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+
+.reply-markdown h1 { font-size: 1.4em; }
+.reply-markdown h2 { font-size: 1.25em; }
+.reply-markdown h3 { font-size: 1.125em; }
+
+.reply-markdown :where(ul, ol) {
+  padding-inline-start: 1.5em;
+}
+
+.reply-markdown li + li {
+  margin-block-start: 0.2em;
+}
+
+.reply-markdown hr {
+  margin-block: 1.2em;
+  border: 0;
+  border-block-start: 1px solid #cddfca;
+}
+
+.reply-markdown blockquote {
+  padding-inline-start: 0.85em;
+  border-inline-start: 1px solid #85ab8d;
+}
+
+.reply-markdown :where(code, pre) {
+  background: #eef3ec;
+}
+
+.reply-markdown :not(pre) > code {
+  padding: 0.1em 0.25em;
+  border-radius: 4px;
+}
+
+.reply-markdown pre {
+  overflow-x: auto;
+  padding: 0.75em;
+  border-radius: 8px;
+  white-space: pre;
+  overflow-wrap: normal;
+}
+
+.reply-markdown > :first-child { margin-block-start: 0; }
+.reply-markdown > :last-child { margin-block-end: 0; }
